@@ -47,6 +47,7 @@ namespace RentShop.Pages
 
                 if (Data.EmployeeBDEntities.GetContext().Users.Any(d => d.Login == LoginTextBox.Text && d.Password == PasswordTextBox.Password))
                 {
+                    MessageBox.Show("Успех!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
                     Classes.Manager.MainFrame.Navigate(new Pages.ListPage());
                 }
 
