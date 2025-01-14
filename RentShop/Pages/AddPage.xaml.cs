@@ -34,7 +34,77 @@ namespace RentShop.Pages
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Успех(нет)!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            try
+            {
+                StringBuilder error = new StringBuilder();
+                if (string.IsNullOrEmpty(FirstNameTextBox.Text))
+                {
+                    error.AppendLine("Введите фамилию");
+                }
+                if (string.IsNullOrEmpty(NameTextBox.Text))
+                {
+                    error.AppendLine("Введите имя");
+                }
+                if (string.IsNullOrEmpty(SurnameTextBox.Text))
+                {
+                    error.AppendLine("Введите отчество");
+                }
+                if (string.IsNullOrEmpty(RoleComboBox.Text))
+                {
+                    error.AppendLine("Выберите должность");
+                }
+                if (string.IsNullOrEmpty(DateOfBirthTextBox.Text))
+                {
+                    error.AppendLine("Введите дату рождения");
+                }
+                if (string.IsNullOrEmpty(PhoneNumberTextBox.Text))
+                {
+                    error.AppendLine("Введите телефон");
+                }
+                if (string.IsNullOrEmpty(GenderComboBox.Text))
+                {
+                    error.AppendLine("Выберите пол");
+                }
+                if (string.IsNullOrEmpty(EmailTextBox.Text))
+                {
+                    error.AppendLine("Введите email");
+                }
+                if (string.IsNullOrEmpty(LoginTextBox.Text))
+                {
+                    error.AppendLine("Введите логин");
+                }
+                if (string.IsNullOrEmpty(PasswordTextBox.Password))
+                {
+                    error.AppendLine("Введите пароль");
+                }
+                if (string.IsNullOrEmpty(RepeatPasswordTextBox.Password))
+                {
+                    error.AppendLine("Подтвердите пароль");
+                }
+
+                if(PasswordTextBox.Password != RepeatPasswordTextBox.Password)
+                {
+                    error.AppendLine("Пароли не совпадают");
+                }
+
+                if(error.Length > 0)
+                {
+                    MessageBox.Show(error.ToString(), "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+
+                
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+
         }
     }
 }
