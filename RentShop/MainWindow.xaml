@@ -1,0 +1,28 @@
+﻿<Window x:Class="RentShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentShop"
+        mc:Ignorable="d"
+        Title="ИС по прокату спортивного инвентаря" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Red">
+            <Image Source="/Res/logo.png" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                   Margin="130,0,0,0"></Image>
+            <TextBlock Text="ИС по прокату спортивного инвентаря" HorizontalAlignment="Center"
+                       VerticalAlignment="Center" FontFamily="Comic Sans MS" 
+                       FontSize="20" FontWeight="Bold"></TextBlock>
+        </Grid>
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"
+               Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></Frame>
+        
+        
+    </Grid>
+</Window>
