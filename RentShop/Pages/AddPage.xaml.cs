@@ -16,19 +16,25 @@ using System.Windows.Shapes;
 namespace RentShop.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ListPage.xaml
+    /// Логика взаимодействия для AddPage.xaml
     /// </summary>
-    public partial class ListPage : Page
+    public partial class AddPage : Page
     {
-        public ListPage()
+        public AddPage()
         {
             InitializeComponent();
-            UserListView.ItemsSource = Data.EmployeeBDEntities.GetContext().Users.ToList();
+            RoleComboBox.ItemsSource = Data.EmployeeBDEntities.GetContext().Role.ToList();
+            GenderComboBox.ItemsSource = Data.EmployeeBDEntities.GetContext().Gender.ToList();
+        }
+
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.Manager.MainFrame.Navigate(new Pages.ListPage());
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Classes.Manager.MainFrame.Navigate(new Pages.AddPage());
+            MessageBox.Show("Успех(нет)!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

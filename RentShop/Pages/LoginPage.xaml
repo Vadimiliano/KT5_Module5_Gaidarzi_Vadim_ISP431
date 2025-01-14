@@ -11,10 +11,10 @@
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Content="Логин"></Label>
-            <TextBox x:Name="LoginTextBox"></TextBox>
+            <TextBox x:Name="LoginTextBox" Height="30"></TextBox>
             <Label Content="Пароль"></Label>
-            <PasswordBox x:Name="PasswordTextBox"></PasswordBox>
-            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Войти"></Button>
+            <PasswordBox x:Name="PasswordTextBox" Height="30"></PasswordBox>
+            <Button x:Name="LoginButton" Click="LoginButton_Click" Content="Войти" Margin="0,10,0,10"></Button>
         </StackPanel>
     </Grid>
 </Page>
